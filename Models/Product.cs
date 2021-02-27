@@ -9,7 +9,7 @@ namespace Shop.Models
     public class Product
     {
         [Key]
-        public int Int { get; set; }
+        public int Id { get; set; }
         [Required(ErrorMessage = "Este campo é obrigatório.")]
         [MaxLength(60, ErrorMessage = "Este campo dever ter entre 3 e 60 caracteres.")]
         [MinLength(3, ErrorMessage = "Este campo dever ter entre 3 e 60 caracteres.")]
@@ -22,6 +22,7 @@ namespace Shop.Models
         [Range(1, int.MaxValue, ErrorMessage ="O preço deve ser maior que zero.")]//999999
         public decimal Price { get; set; }
 
+        public int CategoryId { get; set; }
         public Category Category { get; set; }
 
     }
